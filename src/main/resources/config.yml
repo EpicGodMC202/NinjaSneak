@@ -1,0 +1,7 @@
+pluginPrefix: "&6&lNinjaSneak &7// &c"
+messages:
+  sneakStop: "You have left ninja invisibility!"
+  sneakStart: "You are now invisible!."
+timer:
+  updater: 1
+  sneak: 5

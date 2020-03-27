@@ -1,6 +1,6 @@
 package me.epicgodmc;
 
-import me.epicgodmc.listeners.PlayerJoin;
+import me.epicgodmc.listeners.PlayerMove;
 import me.epicgodmc.listeners.PlayerToggleSneak;
 import me.epicgodmc.threads.TimedSneakChecker;
 import me.epicgodmc.util.MessageManager;
@@ -18,7 +18,6 @@ public class NinjaSneak extends JavaPlugin
     }
 
     public MessageManager mm;
-    public Utils utils;
 
 
     //Executed when plugin enables
@@ -29,7 +28,7 @@ public class NinjaSneak extends JavaPlugin
         saveDefaultConfig();
         registerInstances();
 
-        this.getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
+        this.getServer().getPluginManager().registerEvents(new PlayerMove(), this);
         this.getServer().getPluginManager().registerEvents(new PlayerToggleSneak(), this);
 
         new TimedSneakChecker(this);
@@ -47,7 +46,6 @@ public class NinjaSneak extends JavaPlugin
     private void registerInstances()
     {
         mm = new MessageManager();
-        utils = new Utils();
         new VisibilityManager();
         new SneakingPlayers();
 

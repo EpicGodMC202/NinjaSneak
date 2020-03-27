@@ -5,3 +5,4 @@ messages:
 timer:
   updater: 1
   sneak: 5
+  resetTimerOnJump: true

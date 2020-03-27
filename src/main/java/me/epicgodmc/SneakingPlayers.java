@@ -19,6 +19,16 @@ public class SneakingPlayers
     //Keeps all players currently sneaking in memory
     private HashMap<UUID, Long> sneakingPlayersMemory = new HashMap<>();
 
+    public void forceSetSneaking(UUID uuid)
+    {
+        sneakingPlayersMemory.put(uuid, System.currentTimeMillis());
+    }
+
+    public boolean isSneaking(UUID uuid)
+    {
+        return sneakingPlayersMemory.containsKey(uuid);
+    }
+
     public void setSneaking(UUID uuid, boolean bool)
     {
         if (bool)sneakingPlayersMemory.putIfAbsent(uuid, System.currentTimeMillis());

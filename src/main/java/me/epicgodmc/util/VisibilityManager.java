@@ -43,13 +43,6 @@ public class VisibilityManager
 
     public void setVanished(Player player, boolean bool)
     {
-        for (Player targets : Bukkit.getOnlinePlayers())
-        {
-            if (bool) {
-                targets.hidePlayer(plugin, player);
-            }
-            else targets.showPlayer(plugin, player);
-        }
         if (bool) vanishedPlayers.add(player.getUniqueId());
         else vanishedPlayers.remove(player.getUniqueId());
     }
